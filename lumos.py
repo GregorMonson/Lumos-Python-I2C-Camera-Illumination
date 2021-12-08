@@ -1,4 +1,4 @@
-from os import sleep
+from time import sleep
 
 from camera_class import Camera
 
