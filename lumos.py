@@ -6,6 +6,3 @@ CAMERA_BUS = 1
 CAMERA_ADDR = 0x00
 
 camera = Camera(CAMERA_ADDR, CAMERA_BUS)
-
-camera.write(0x00, 0x01)
-
