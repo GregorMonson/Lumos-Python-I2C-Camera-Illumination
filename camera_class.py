@@ -20,7 +20,7 @@ class Camera():
             data = self.read(i)
             results.append("REG : {}, DATA : {}".format(hex(i), hex(data)))
 
-            return results
+        return results
     
     def SET_LED(self, led_state):
         
