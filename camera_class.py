@@ -5,6 +5,8 @@ class Camera():
         self.addr = address    
         self.bus = smbus.SMBus(camera_bus)
 
+        self.__setup__()
+
     def write(self, register ,command):
         self.bus.write_byte_data(self.addr, register, command)
 
@@ -17,5 +19,19 @@ class Camera():
         for i in range(start, end):
             data = self.read(i)
             results.append("REG : {}, DATA : {}".format(hex(i), hex(data)))
+
+            return results
+    
+    def SET_LED(self, led_num, state):
         
-        return results
+        if led_num == 1:
+            if state == True: self.write(0x02, 0x48)
+            elif state == False: self.write(0x02, 0x00)
+        
+        if led_num == 2:
+            if state == True: self.write(0x02, 0x88)
+            elif state == False: self.write(0x02, 0x00)
+
+    def __setup__(self):
+            self.write(0x06, 0x00)
+            self.write(0x02, 0x00)
