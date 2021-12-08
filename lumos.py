@@ -10,13 +10,8 @@ CAMERA_ADDR = 0x20
 camera = Camera(CAMERA_ADDR, CAMERA_BUS)
 
 #Test
-camera.SET_LED(1, True)
-
-sleep(10)
-
-camera.SET_LED(1, False)
-camera.SET_LED(2, True)
-
-sleep(10)
-
-camera.SET_LED(2, False)
+for i in range(2):
+    camera.SET_LED(3)
+    sleep(1)
+    camera.SET_LED(0)
+    sleep(1)
