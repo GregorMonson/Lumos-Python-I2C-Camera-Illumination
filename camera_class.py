@@ -24,11 +24,9 @@ class Camera():
     
     def SET_LED(self, led_state):
         
-        if led_state == 0: self.write(0x02, 0x00)
-        elif led_state == 1: self.write(0x02, 0x48)
-        elif led_state == 2: self.write(0x02, 0x88)
-        elif led_state == 3: self.write(0x02, 0xC8)
+        if led_state == False: self.write(0x02, 0x20)
+        elif led_state == True: self.write(0x02, 0xFF)
 
     def __setup__(self):
             self.write(0x06, 0x00)
-            self.write(0x02, 0x00)
+            self.write(0x02, 0x20)
