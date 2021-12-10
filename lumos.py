@@ -10,6 +10,4 @@ CAMERA_ADDR = 0x20
 camera = Camera(CAMERA_ADDR, CAMERA_BUS)
 
 #Test
-camera.SET_LED(3)
-sleep(20)
-camera.SET_LED(0)
+camera.write(0x06, 0x00)
