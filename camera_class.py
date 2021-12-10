@@ -31,4 +31,4 @@ class Camera():
 
     def __setup__(self):
             self.write(0x06, 0x00)
-            self.write(0x02, 0x00)
+            #self.write(0x02, 0x00)
