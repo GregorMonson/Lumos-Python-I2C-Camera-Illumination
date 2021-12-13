@@ -5,7 +5,7 @@ class Camera():
         self.addr = address    
         self.bus = smbus.SMBus(camera_bus)
 
-        #self.__setup__()
+        self.__setup__()
 
     def write(self, register ,command):
         self.bus.write_byte_data(self.addr, register, command)
